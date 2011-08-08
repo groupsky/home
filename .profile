@@ -34,7 +34,7 @@ if [ -d "$HOME/opt/android-sdk-linux_x86" ]; then
 fi
 
 # include global gems to PATH
-if [ -d "/var/lib/gems/1.8/bin"]; then
+if [ -d "/var/lib/gems/1.8/bin" ]; then
     PATH="$PATH:/var/lib/gems/1.8/bin"
 fi
 

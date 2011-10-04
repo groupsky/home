@@ -1,0 +1,13 @@
+[user]
+	name = Geno Roupsky
+	email = geno@roupsky.name
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch

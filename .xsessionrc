@@ -16,5 +16,8 @@ xinput --set-prop "DualPoint Stick" "Evdev Wheel Emulation Button" 2
 xinput --set-prop "DualPoint Stick" "Evdev Wheel Emulation Timeout" 200
 xinput --set-prop "DualPoint Stick" "Evdev Wheel Emulation Axes" 6 7 4 5
 
+# switch to another accel profile
+xinput --set-prop "DualPoint Stick" "Device Accel Profile" 3
+
 # disable touchpad
 xinput --set-prop "AlpsPS/2 ALPS DualPoint TouchPad" "Device Enabled" 0

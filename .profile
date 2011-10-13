@@ -38,3 +38,4 @@ if [ -d "/var/lib/gems/1.8/bin" ]; then
     PATH="$PATH:/var/lib/gems/1.8/bin"
 fi
 
+export LANG="bg_BG.UTF-8"

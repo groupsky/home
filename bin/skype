@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "killing old skype"
+killall -9w -o 1s skype
+echo "removing locks"
+rm -f `find ~/.Skype/ -name '*.lock'`
+echo "starting skype"
+/usr/bin/skype

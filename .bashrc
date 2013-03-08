@@ -97,3 +97,11 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# define android home
+if [ -d "$HOME/opt/android-sdk-linux" ]; then
+    ANDROID_HOME="$HOME/opt/android-sdk-linux"
+    # include android tools to PATH
+    PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
+fi
+

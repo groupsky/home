@@ -1,2 +1,4 @@
-source $HOME/.bashrc
+#!/bin/bash
+
+. $HOME/.bashrc
 

@@ -28,6 +28,9 @@ if [ "$(uname)" == "Darwin" ]; then
     
     # install hub
     check hub || brew install hub
+    
+    # install cocoapods
+    check pod || sudo gem install cocoapods
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     echo "Linux detected"
     

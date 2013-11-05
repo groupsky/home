@@ -1,10 +1,16 @@
 #!/bin/bash
 
 function get() {
+	echo "downloading $1..."
 	curl -fsSL https://github.com/groupsky/home/raw/master/$1 > $HOME/$1
 }
 
+function bcheck() {
+	echo "checking $1..."
+	brew list "$1" >/dev/null 2>&1
+}
 function check() {
+	echo "checking $1..."
 	command -v "$1" >/dev/null 2>&1
 }
 
@@ -15,22 +21,26 @@ if [ "$(uname)" == "Darwin" ]; then
     check brew || ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
     
     # install mc
-    check mc || brew install mc
+    bcheck mc || brew install mc
 
     # install git
-    check git || brew install git
+    bcheck git || brew install git
 
     # install wget
-    check wget || brew install wget
+    bcheck wget || brew install wget
 
     # install bash-completion
-    brew install bash-completion
+    bcheck bash-completion || brew install bash-completion
     
     # install hub
-    check hub || brew install hub
+    bcheck hub || brew install hub
     
     # install cocoapods
     check pod || sudo gem install cocoapods
+    
+    # install libyaml
+    bcheck libyaml || brew install libyaml
+    
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     echo "Linux detected"
     
@@ -51,3 +61,9 @@ get .bashrc
 get .profile
 get .bash_aliases
 
+check jenkins-jobs || (
+    mkdir -p $HOME/src/jenkins-job-builder
+    git clone git@github.com:openstack-infra/jenkins-job-builder.git $HOME/src/jenkins-job-builder
+    cd $HOME/src/jenkins-job-builder
+    sudo python setup.py install
+)

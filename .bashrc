@@ -105,3 +105,8 @@ if [ -d "$HOME/opt/android-sdk-linux" ]; then
     PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
 fi
 
+# bash completion on osx
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+

@@ -19,6 +19,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
     # install homebrew
     check brew || ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+    brew doctor
     
     # install mc
     bcheck mc || brew install mc
@@ -63,7 +64,7 @@ get .bash_aliases
 
 check jenkins-jobs || (
     mkdir -p $HOME/src/jenkins-job-builder
-    git clone git@github.com:openstack-infra/jenkins-job-builder.git $HOME/src/jenkins-job-builder
+    git clone https://github.com/openstack-infra/jenkins-job-builder.git $HOME/src/jenkins-job-builder
     cd $HOME/src/jenkins-job-builder
     sudo python setup.py install
 )

@@ -105,6 +105,11 @@ if [ -d "$HOME/opt/android-sdk-linux" ]; then
     PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
 fi
 
+# define local bin
+if [ -d "$HOME/bin" ]; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 # bash completion on osx
 
 if [ "$(uname)" == "Darwin" ]; then

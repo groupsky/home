@@ -14,6 +14,9 @@ function check() {
 	command -v "$1" >/dev/null 2>&1
 }
 
+mkdir -p ~/bin
+mkdir -p ~/src
+
 if [ "$(uname)" == "Darwin" ]; then
     echo "OS X detected"
 
@@ -44,6 +47,8 @@ if [ "$(uname)" == "Darwin" ]; then
     
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     echo "Linux detected"
+
+    sudo aptitude install python-setuptools compizconfig-settings-manager compiz-plugins
     
     # install hub
     check hub || curl http://hub.github.com/standalone -sLo ~/bin/hub

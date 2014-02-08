@@ -48,7 +48,8 @@ if [ "$(uname)" == "Darwin" ]; then
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     echo "Linux detected"
 
-    sudo aptitude install python-setuptools compizconfig-settings-manager compiz-plugins
+    sudo aptitude update
+    sudo aptitude install git mc python-setuptools python-dev compizconfig-settings-manager compiz-plugins build-essential
     
     # install hub
     check hub || curl http://hub.github.com/standalone -sLo ~/bin/hub
